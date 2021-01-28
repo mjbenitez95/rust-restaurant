@@ -29,6 +29,20 @@ mod front_of_house {
     }
 }
 
+mod back_of_house {
+    fn fix_incorrect_order() {
+        cook_order();
+        // here, we use super because we expect the structure between
+        // the module back_of_house and the function serve_order()
+        // won't change
+        super::serve_order();
+    }
+
+    fn cook_order() {}
+}
+
+fn serve_order() {}
+
 fn eat_at_restaurant() {
     // absolute path
     crate::front_of_house::hosting::add_to_waitlist();
