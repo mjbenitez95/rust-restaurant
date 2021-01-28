@@ -3,31 +3,23 @@
 
     crate
     └── front_of_house
-        ├── hosting
-        │   ├── add_to_waitlist
-        │   └── seat_at_table
-        └── serving
-        │   ├── take_order
-        │   ├── serve_order
-        │   └── take_payment
-        └── eat_at_restaurant()
+    ├── hosting
+    │   ├── add_to_waitlist
+    │   └── seat_at_table
+    └── serving
+    │   ├── take_order
+    │   ├── serve_order
+    │   └── take_payment
+    └── eat_at_restaurant()
 */
 
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
+mod front_of_house;
 
-        fn seat_at_table() {}
-    }
+// we use the 'use' keyword with an absolute path
+pub use crate::front_of_house::hosting;
 
-    mod serving {
-        fn take_order() {}
-
-        fn serve_order() {}
-
-        fn take_payment() {}
-    }
-}
+// alternatively, we can use a relative path:
+// use self::front_of_house::hosting;
 
 mod back_of_house {
     pub enum Appetizer {
@@ -61,12 +53,6 @@ mod back_of_house {
 }
 
 fn serve_order() {}
-
-// we use the 'use' keyword with an absolute path
-pub use crate::front_of_house::hosting;
-
-// alternatively, we can use a relative path:
-// use self::front_of_house::hosting;
 
 pub fn eat_at_restaurant() {
     // absolute path
