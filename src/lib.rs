@@ -63,7 +63,7 @@ mod back_of_house {
 fn serve_order() {}
 
 // we use the 'use' keyword with an absolute path
-use crate::front_of_house::hosting;
+pub use crate::front_of_house::hosting;
 
 // alternatively, we can use a relative path:
 // use self::front_of_house::hosting;
