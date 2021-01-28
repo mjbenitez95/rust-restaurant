@@ -1,6 +1,6 @@
-/* 
+/*
     The module tree for this structure is:
- 
+
     crate
     └── front_of_house
         ├── hosting
@@ -14,7 +14,7 @@
 */
 
 mod front_of_house {
-    mod hosting {
+    pub mod hosting {
         fn add_to_waitlist() {}
 
         fn seat_at_table() {}
@@ -27,4 +27,12 @@ mod front_of_house {
 
         fn take_payment() {}
     }
+}
+
+pub fn eat_at_restaurant() {
+    // absolute path
+    crate::front_of_house::hosting::add_to_waitlist();
+
+    // relative path
+    front_of_house::hosting::add_to_waitlist();
 }
