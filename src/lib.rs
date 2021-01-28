@@ -62,12 +62,21 @@ mod back_of_house {
 
 fn serve_order() {}
 
-fn eat_at_restaurant() {
+// we use the 'use' keyword with an absolute path
+use crate::front_of_house::hosting;
+
+// alternatively, we can use a relative path:
+// use self::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
     // absolute path
     crate::front_of_house::hosting::add_to_waitlist();
 
     // relative path
     front_of_house::hosting::add_to_waitlist();
+
+    // with the use key word above, we have brought the hosting module into scope
+    hosting::add_to_waitlist();
 
     let mut meal = back_of_house::Breakfast::summer("Rye");
     // change our mind about what bread we'd like
