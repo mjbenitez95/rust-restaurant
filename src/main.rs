@@ -1,6 +1,6 @@
-use std::collections::HashMap;
-use std::fmt::Result;
-use std::{cmp::Ordering, io};
+use std::collections::*;
+use std::io::{self, Write};
+use std::{cmp::Ordering, fmt::Result};
 
 fn main() {
     let mut map = HashMap::new();
