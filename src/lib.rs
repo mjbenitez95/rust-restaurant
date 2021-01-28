@@ -30,6 +30,11 @@ mod front_of_house {
 }
 
 mod back_of_house {
+    pub enum Appetizer {
+        Soup,
+        Salad,
+    }
+
     pub struct Breakfast {
         pub toast: String,
         seasonal_fruit: String,
@@ -71,4 +76,7 @@ fn eat_at_restaurant() {
 
     // next line is invalid because seasonal fruit is private
     // meal.seasonal_fruit = String::from("blueberries");
+
+    let order_for_table_6 = back_of_house::Appetizer::Soup;
+    let order_for_table_2 = back_of_house::Appetizer::Salad;
 }
