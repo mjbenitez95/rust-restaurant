@@ -1,5 +1,5 @@
 [package]
-name = "packages-and-crates"
+name = "restaurant"
 version = "0.1.0"
 authors = ["Coffin <coffin@gravedigger.brewmaster.lab>"]
 edition = "2018"
